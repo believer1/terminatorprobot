@@ -18,11 +18,11 @@ from tg_bot.modules.helper_funcs.chat_status import is_user_admin
 from tg_bot.modules.helper_funcs.misc import paginate_modules
 
 PM_START_TEXT = """
-hoi {}, my name is {}! if you have any questions about how to use me please give me /help... 
+Hi {}, my name is {}! if you have any questions about how to use me please give me /help... 
 
 im a group manager bot maintained by  [this person](tg://user?id={}).
 
-[Click here](https://telegram.me/Terminator_ProBot?startgroup=add)to add me in your groups and Enjoy the World 😎
+[Click here](https://telegram.me/Terminator_ProBot?startgroup=add) to add me in your groups and Enjoy the World 😎
 
 For more commands click /help...
 
