@@ -22,11 +22,11 @@ hoi {}, my name is {}! if you have any questions about how to use me please give
 
 im a group manager bot maintained by  [this person](tg://user?id={}).
 
-[Click here to add me in your groups and Enjoy the World 😎](https://telegram.me/Terminator_ProBot?startgroup=add)
+[Click here](https://telegram.me/Terminator_ProBot?startgroup=add)to add me in your groups and Enjoy the World 😎
 
 For more commands click /help...
 
-**Keep in mind that any changes you DO do to the source have to be on github, as per the license.**
+
 
 """
 
