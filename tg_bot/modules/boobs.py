@@ -12,9 +12,9 @@ import requests
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram import ParseMode
 from telegram.ext import CommandHandler, run_async, Filters
-from haruka import dispatcher
-from haruka.__main__ import STATS, USER_INFO
-from haruka.modules.disable import DisableAbleCommandHandler
+from tg_bot import dispatcher
+from tg_bot.__main__ import STATS, USER_INFO
+from tg_bot.modules.disable import DisableAbleCommandHandler
 
 def boobs(bot: Bot, update: Update):
     nsfw = requests.get('http://api.oboobs.ru/noise/1').json()[0]["preview"]
