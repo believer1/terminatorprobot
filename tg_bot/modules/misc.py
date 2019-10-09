@@ -82,6 +82,16 @@ SLAP_TEMPLATES = (
     "{user1} gave a friendly push to help {user2} learn to swim in lava."
 )
 
+RAPE_STRINGS = (
+     "Rape Done Drink The Cum",
+     "The user has been successfully raped",
+     "Dekho Bhaiyya esa hai! Izzat bachailo apni warna Gaand maar lenge tumhari",
+     "Relax your Rear, ders nothing to fear,The Rape train is finally here",
+     "Dont Rape Too much Bsdk.",
+     "Rape coming... Raped! haha :p",
+     "Lodu Andha hai kya Yaha tera rape ho raha hai aur tu abhi tak yahi gaand mara raha hai lulz",
+)  
+
 ITEMS = (
     "cast iron skillet",
     "large trout",
@@ -375,6 +385,12 @@ def markdown_help(bot: Bot, update: Update):
 @run_async
 def stats(bot: Bot, update: Update):
     update.effective_message.reply_text("Current stats:\n" + "\n".join([mod.__stats__() for mod in STATS]))
+    
+@run_async
+def rape(bot: Bot, update: Update):
+    # reply to correct message
+    reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
+    reply_text(random.choice(RAPE_STRINGS)) 
 
 @run_async
 def stickerid(bot: Bot, update: Update):
@@ -435,6 +451,7 @@ TIME_HANDLER = CommandHandler("time", get_time, pass_args=True)
 
 RUNS_HANDLER = DisableAbleCommandHandler("runs", runs)
 SLAP_HANDLER = DisableAbleCommandHandler("slap", slap, pass_args=True)
+RAPE_HANDLER = DisableAbleCommandHandler("rape", rape, admin_ok=True)
 INFO_HANDLER = DisableAbleCommandHandler("info", info, pass_args=True)
 
 ECHO_HANDLER = CommandHandler("echo", echo, filters=CustomFilters.sudo_filter)
@@ -452,6 +469,7 @@ dispatcher.add_handler(IP_HANDLER)
 dispatcher.add_handler(TIME_HANDLER)
 dispatcher.add_handler(RUNS_HANDLER)
 dispatcher.add_handler(SLAP_HANDLER)
+dispatcher.add_handler(RAPE_HANDLER)
 dispatcher.add_handler(INFO_HANDLER)
 dispatcher.add_handler(ECHO_HANDLER)
 dispatcher.add_handler(MD_HELP_HANDLER)
