@@ -16,6 +16,9 @@ from tg_bot import dispatcher
 from tg_bot.__main__ import STATS, USER_INFO
 from tg_bot.modules.disable import DisableAbleCommandHandler
 
+
+@run_async
+@bot_admin
 def boobs(bot: Bot, update: Update):
     nsfw = requests.get('http://api.oboobs.ru/noise/1').json()[0]["preview"]
     final = "http://media.oboobs.ru/{}".format(nsfw)
