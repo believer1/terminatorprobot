@@ -153,7 +153,7 @@ BROADCAST_HANDLER = CommandHandler("broadcast", broadcast, filters=Filters.user(
 USER_HANDLER = MessageHandler(Filters.all & Filters.group, log_user)
 CHATLIST_HANDLER = CommandHandler("chatlist", chats, filters=CustomFilters.sudo_filter)
 SLIST_HANDLER = CommandHandler("slist", slist,
-                           filters=CustomFilters.sudo_filter | CustomFilters.support_filter)
+                           filters=Filters.user(OWNER_ID))
 
 dispatcher.add_handler(USER_HANDLER, USERS_GROUP)
 dispatcher.add_handler(BROADCAST_HANDLER)
