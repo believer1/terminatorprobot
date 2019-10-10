@@ -21,7 +21,7 @@ from tg_bot.modules.disable import DisableAbleCommandHandler
 
 import tg_bot.modules.sql.feds_sql as sql
 
-from tg_bot.modules.translations.strings
+
 
 from tg_bot.modules.connection import connected
 
