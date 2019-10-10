@@ -25,7 +25,7 @@ im a group manager bot maintained by  [this person](tg://user?id={}).
 Want to add me to your group? [Click here](https://telegram.me/Terminator_ProBot?startgroup=add) 
 Enjoy the World 😎
 
-want to join support group [Click here](https://https://t.me/Terminator_Support) 
+want to join support group [Click here](https://t.me/Terminator_Support). 
 For more commands click /help...
 
 
