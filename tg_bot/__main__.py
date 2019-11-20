@@ -25,7 +25,7 @@ Want to add me to your group? [Click here](https://telegram.me/Terminator_ProBot
 Enjoy the World 😎
 
 
-want to join support group [Click here](https://t.me/joinchat/HoGq4RWvQdKp-sAxeh0dfQ). 
+want to join support group [Click here](https://t.me/joinchat/GSJiM1S6PCWRBAot2mXT2g). 
 
 For more commands click /help...
 
