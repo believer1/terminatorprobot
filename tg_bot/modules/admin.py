@@ -205,10 +205,13 @@ def adminlist(bot: Bot, update: Update):
         status = admin.status
         name = "[{}](tg://user?id={})".format(user.first_name + " " + (user.last_name or ""), user.id)
         if user.username:
-            name = "[{}](tg://user?id={})".format(user.first_name + (user.last_name or ""), user.id)
+            name = escape_markdown("@" + user.username)
+            
         if status == "administrator":
-            text += "\n` • `{}".format(name)
-    update.effective_message.reply_text(text, parse_mode=ParseMode.MARKDOWN)
+            text += "\n` `{}".format(name)
+            members = "\n\n*Members:*\n`🧒 ` {} users".format(count)
+            
+    msg.reply_text(text + members, parse_mode=ParseMode.MARKDOWN)
 
 
 def __chat_settings__(chat_id, user_id):
