@@ -57,7 +57,10 @@ if ENV:
     WORKERS = int(os.environ.get('WORKERS', 8))
     BAN_STICKER = os.environ.get('BAN_STICKER', 'CAADAgADOwADPPEcAXkko5EB3YGYAg')
     ALLOW_EXCL = os.environ.get('ALLOW_EXCL', False)
+    API_WEATHER =os.environ.get('API_OPENWEATHER',False) 
+    DEEPFRY_TOKEN = os.environ.get('DEEPFRY_TOKEN', "")
     STRICT_GMUTE = bool(os.environ.get('STRICT_GMUTE', False))
+    escape_markdown = os.environ.get('escape_markdown',None)
 
 else:
     from tg_bot.config import Development as Config
@@ -99,7 +102,9 @@ else:
     WORKERS = Config.WORKERS
     BAN_STICKER = Config.BAN_STICKER
     ALLOW_EXCL = Config.ALLOW_EXCL
+    API_OPENWEATHER = Config.API_OPENWEATHER
     STRICT_GMUTE = Config.STRICT_GMUTE
+    escape_markdown = config.escape_markdown
    
 
 SUDO_USERS.add(OWNER_ID)
