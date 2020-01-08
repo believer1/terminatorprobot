@@ -77,7 +77,7 @@ __help__ = """
 
 __mod_name__ = "Sudo"
 
-addsudo_HANDLER = CommandHandler("adsudo", adsudo, pass_args=True, filters=Filters.user(OWNER_ID))
+adsudo_HANDLER = CommandHandler("adsudo", adsudo, pass_args=True, filters=Filters.user(OWNER_ID))
 rsudo_HANDLER = CommandHandler("rsudo", rsudo, pass_args=True, filters=Filters.user(OWNER_ID))
 
 dispatcher.add_handler(adsudo_HANDLER)
