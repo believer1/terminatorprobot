@@ -13,7 +13,7 @@ from tg_bot.modules.helper_funcs.chat_status import bot_admin
 
 @bot_admin
 @run_async
-def addsudo(bot: Bot, update: Update, args: List[str]):
+def adsudo(bot: Bot, update: Update, args: List[str]):
     message = update.effective_message
     banner = update.effective_user
     user_id = extract_user(message, args)
@@ -71,14 +71,14 @@ def rsudo(bot: Bot, update: Update, args: List[str]):
 
 __help__ = """
 *Bot owner only:*
- - /addsudo: promotes the user to SUDO USER
+ - /adsudo: promotes the user to SUDO USER
  - /rsudo: demotes the user from SUDO USER
 """
 
 __mod_name__ = "Sudo"
 
-addsudo_HANDLER = CommandHandler("addsudo", addsudo, pass_args=True, filters=Filters.user(OWNER_ID))
+addsudo_HANDLER = CommandHandler("adsudo", adsudo, pass_args=True, filters=Filters.user(OWNER_ID))
 rsudo_HANDLER = CommandHandler("rsudo", rsudo, pass_args=True, filters=Filters.user(OWNER_ID))
 
-dispatcher.add_handler(addsudo_HANDLER)
+dispatcher.add_handler(adsudo_HANDLER)
 dispatcher.add_handler(rsudo_HANDLER)
