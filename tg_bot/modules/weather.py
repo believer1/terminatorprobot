@@ -33,7 +33,7 @@ def weather(bot, update, args):
         # Weather symbols
         status = ""
         status_now = theweather.get_weather_code()
-        if status_now < 232: # Rain storm
+        if status_now < 232: 
             status += "⛈️ "
         elif status_now < 321: # Drizzle
             status += "🌧️ "
