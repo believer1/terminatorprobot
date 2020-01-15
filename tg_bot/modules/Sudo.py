@@ -1,5 +1,4 @@
 import html
-
 from typing import List
 
 from telegram import Update, Bot
