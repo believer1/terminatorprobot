@@ -1,15 +1,10 @@
-import random, re
-from random import randint
-from telegram import Message, Update, Bot, User
-from telegram import MessageEntity
-from telegram.ext import Filters, MessageHandler, run_async
-
-from tg_bot import dispatcher
-from tg_bot.modules.disable import DisableAbleCommandHandler
-
 ABUSE_STRINGS = (
     "Fuck off",
     "Stfu go fuck yourself",
+    "Jaa na lawde",
+    "Teri maa ki chut",
+    "Bhag madharchod",
+    "MUH ME LEGA KYA BSDK",
     "Ur mum gey",
     "Ur dad lesbo",
     "Bsdk",
@@ -23,6 +18,19 @@ ABUSE_STRINGS = (
     "CUnt",
     " Gay is here",
     "Ur dad gey bc "
+)
+
+RAPE_STRINGS = (
+    "Kitni baar Rape krvyega mujhse?",
+    "Tu Randi hai Sabko pta hai😂",
+    "Rape coming.... Raped! haha 😆",
+    "Lodu Andha hai kya Yaha tera rape ho raha hai aur tu abhi tak yahi gaand mara raha hai lulz",
+    "Relax your Rear, ders nothing to fear,The Rape train is finally here",
+    "EK baat yaad rkhio, Chut ka Chakkar matlab maut se takkar",
+    "Dekho Bhaiyya esa hai! Izzat bachailo apni warna Gaand maar lenge tumhari",
+    "Rape Done Drink The Cum",
+    "The user has been successfully raped",
+    "Relax your Rear, ders nothing to fear,The Rape train is finally here"
 )
 
 EYES = [
@@ -216,6 +224,12 @@ def abuse(bot: Bot, update: Update):
     reply_text(random.choice(ABUSE_STRINGS))
 	
 @run_async
+def rape(bot: Bot, update: Update):
+    # reply to correct message
+    reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
+    reply_text(random.choice(RAPE_STRINGS))
+
+@run_async
 def shrug(bot: Bot, update: Update):
     # reply to correct message
     reply_text = update.effective_message.reply_to_message.reply_text if update.effective_message.reply_to_message else update.effective_message.reply_text
@@ -260,12 +274,15 @@ __help__ = """
  - /decide : Randomly answers yes/no/maybe
  - /toss : Tosses A coin
  - /abuse : Abuses the cunt
+ - /rape : Rape
  - /tts <any text> : Converts text to speech
  - /bluetext : check urself :V
  - /roll : Roll a dice.
+ 
+
  - /rlg : Join ears,nose,mouth and create an emo ;-;
  - /zal <any text> : zalgofy! your text
- Lyrics Plugin will take some moar time to come up.
+ 
 """
 
 __mod_name__ = "Extras"
@@ -276,7 +293,9 @@ SHRUG_HANDLER = DisableAbleCommandHandler("shrug", shrug)
 BLUETEXT_HANDLER = DisableAbleCommandHandler("bluetext", bluetext)
 RLG_HANDLER = DisableAbleCommandHandler("rlg", rlg)
 DECIDE_HANDLER = DisableAbleCommandHandler("decide", decide)
+ABUSE_HANDLER = DisableAbleCommandHandler("abuse", abuse)
 TABLE_HANDLER = DisableAbleCommandHandler("table", table)
+RAPE_HANDLER = DisableAbleCommandHandler("rape", rape)
 
 dispatcher.add_handler(ROLL_HANDLER)
 dispatcher.add_handler(TOSS_HANDLER)
@@ -285,3 +304,5 @@ dispatcher.add_handler(BLUETEXT_HANDLER)
 dispatcher.add_handler(RLG_HANDLER)
 dispatcher.add_handler(DECIDE_HANDLER)
 dispatcher.add_handler(TABLE_HANDLER)
+dispatcher.add_handler(ABUSE_HANDLER)
+dispatcher.add_handler(RAPE_HANDLER)
