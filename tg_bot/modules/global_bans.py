@@ -54,7 +54,7 @@ def gban(bot: Bot, update: Update, args: List[str]):
         return
     
     if int(user_id) in OWNER_ID:
-        message.reply_text("I spy, with my little eye... a sudo user war! Why are you guys turning on each other?")
+        message.reply_text("You Are Trying to Ban Who Gave you powers")
         return
 
     if int(user_id) in SUDO_USERS:
